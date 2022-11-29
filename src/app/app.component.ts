@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component ,} from '@angular/core';
+import { MovieService } from './service/movie.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'workshop';
+  shm:any = Array;
+  idmove:number = 0 ;
+  
+  constructor(private service :MovieService){
+    
+  }
+  onBackClicked(movie: string): void{
+    this.shm = movie;
+}
 }
